@@ -1,5 +1,10 @@
 <p>Hola {{ nombre }}</p>
 
+<ul>
+  <h2>Nombres:</h2>
+  <li *ngFor="let n of array">Soy {{ n }}</li>
+</ul>
+
 <button (click)="handleAdd()">ADD</button>
 <h1>Contador: {{ counter }}</h1>
 <button (click)="handleSub()" [disabled]="counter === 0">SUB</button>

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { NombresService } from './nombres.service';
 
 @Component({
   selector: 'app-layout',
@@ -6,6 +7,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./layout.component.css'],
 })
 export class LayoutComponent {
+  array: string[] = [];
+
+  constructor(private nombres: NombresService) {
+    this.array = nombres.getNombres();
+  }
+
   @Input() nombre?: string = 'Mundo';
 
   counter: number = 0;
