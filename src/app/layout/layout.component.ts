@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-layout',
@@ -6,9 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout.component.css'],
 })
 export class LayoutComponent {
-  msg: string = 'desconocido';
+  @Input() nombre?: string = 'Mundo';
 
-  handleClick() {
-    this.msg = 'Agustin';
+  counter: number = 0;
+
+  handleAdd() {
+    this.counter += 1;
+  }
+
+  handleSub() {
+    if (this.counter !== 0) {
+      this.counter -= 1;
+    }
   }
 }
